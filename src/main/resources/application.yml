@@ -1,0 +1,25 @@
+server:
+  port: ${PORT:8086}
+spring:
+  application:
+    name: relex-market
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/market}
+    driverClassName: org.postgresql.Driver
+    username: ${DB_USERNAME:sa}
+    password: ${DB_PASSWORD:password}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate.dialect: org.hibernate.dialect.H2Dialect
+  liquibase:
+    change-log: classpath:db/migration/v1/changelog.yaml
+  jackson:
+    mapper:
+      accept-case-insensitive-enums: true
+logging:
+  level:
+    ru.relex.market: debug
