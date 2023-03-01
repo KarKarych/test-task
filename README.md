@@ -6,7 +6,7 @@
 - Добавлен сваггер. [OpenApi](https://gitlab.com/smetaninivanu/openapi/-/blob/main/openApi2.yaml)
 - Подключён Spring Security для проверки ролей
 - Реализовано подтверждение аккаунта через письмо по почте
-
+- docker-compose.yml [Dockerhub](https://hub.docker.com/repository/docker/wvolfff/relex_market)
 ## Демонстрация
 [Видео](https://www.youtube.com/watch?v=koKxhIK_qoM)
 
