@@ -7,12 +7,18 @@
 - Подключён Spring Security для проверки ролей
 - Реализовано подтверждение аккаунта через письмо по почте
 - docker-compose.yml [Dockerhub](https://hub.docker.com/repository/docker/wvolfff/relex_market)
+- liquibase миграции
+
 ## Демонстрация
 [Видео](https://www.youtube.com/watch?v=koKxhIK_qoM)
 
 ## API приложения
 
 secret_key передаётся в хедере Authorization secret_key
+
+тестовые пользователи:
+- secret_key ADMIN  ```bpeBIoOfKAAdir5KUZtF4fmF57mwZmpy4sF```
+- secret_key  USER  ```UZtF4fmF57mwZmpy4sFbpeBIoOfKAAdir5K```
 
 ### 1. Регистрация нового пользователя 
 ### Эндпоинт POST /api/users
