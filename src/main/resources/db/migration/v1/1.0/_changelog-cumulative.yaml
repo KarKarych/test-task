@@ -1,4 +1,68 @@
 databaseChangeLog:
   - preConditions:
       - dbms:
-          type: postgres
+          type: postgresql
+  - changeSet:
+      id: RT-001-202302270151
+      author: wvolfff
+      comment: Init database
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202302270151.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: RT-001-202302271258
+      author: wvolfff
+      comment: Add base currency rates
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202302271258.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: RT-001-202302281921
+      author: wvolfff
+      comment: Change transaction table structure
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202302281921.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: RT-001-202302282011
+      author: wvolfff
+      comment: Add default data
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202302282011.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: RT-001-202302282218
+      author: wvolfff
+      comment: Add authorities column for users table
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202302282218.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: RT-001-202303010105
+      author: wvolfff
+      comment: Add admin users
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202303010105.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: RT-001-202303011311
+      author: wvolfff
+      comment: Change created_at column in transactions_history
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202303011311.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: RT-001-202303011837
+      author: wvolfff
+      comment: Add verification_tokens
+      changes:
+        - sqlFile:
+            path: 1.0/RT-001-202303011837.sql
+            relativeToChangelogFile: true

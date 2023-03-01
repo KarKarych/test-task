@@ -1,17 +1,15 @@
-package ru.relex.market.service.exception.model;
+package ru.relex.market.service.model.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Error {
+public class RegisterResponse {
 
-  private List<String> errors;
+  private String secretKey;
 }

@@ -1,16 +1,16 @@
 services:
-  kameleoon_trial_task:
+  market:
     container_name: relex_market
     image: wvolfff/relex_market
     restart: on-failure
     depends_on:
       - postgres_market
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/market
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres_market:5432/market
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: 123321
     ports:
-      - "8080:8080"
+      - "8086:8086"
   postgres_market:
     image: postgres:15.1
     container_name: postgres_market

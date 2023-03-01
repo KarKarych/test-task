@@ -2,7 +2,7 @@
 databaseChangeLog:
   - preConditions:
       - dbms:
-          type: postgres
+          type: postgresql
   - include:
       file: 1.0/_changelog-cumulative.yaml
       relativeToChangelogFile: true

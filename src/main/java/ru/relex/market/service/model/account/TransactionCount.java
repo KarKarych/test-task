@@ -1,17 +1,17 @@
-package ru.relex.market.service.exception.model;
+package ru.relex.market.service.model.account;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Error {
+public class TransactionCount {
 
-  private List<String> errors;
+  @NotNull
+  private Long transactionCount;
 }
