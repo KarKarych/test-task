@@ -21,7 +21,7 @@ secret_key передаётся в хедере Authorization secret_key
 - secret_key  USER  ```UZtF4fmF57mwZmpy4sFbpeBIoOfKAAdir5K```
 
 ### 1. Регистрация нового пользователя 
-### Эндпоинт POST /api/users
+### Эндпоинт POST ```/api/users```
 #### Доступно для незарегистрированного пользователя
 Запрос
 ```http request
@@ -41,7 +41,7 @@ POST /api/users
 ```
 
 ### 2. Просмотр баланса своего кошелька
-### Эндпоинт GET /api/accounts/balance
+### Эндпоинт GET ```/api/accounts/balance```
 #### Доступно для зарегистрированного пользователя с ролью USER, ADMIN
 Запрос
 ```http request
@@ -57,7 +57,7 @@ GET /api/accounts/balance
 ```
 
 ### 3. Пополнение кошелька
-### Эндпоинт POST /api/accounts/deposit
+### Эндпоинт POST ```/api/accounts/deposit```
 #### Доступно для зарегистрированного пользователя с ролью USER, ADMIN
 Запрос
 ```http request
@@ -76,7 +76,7 @@ POST /api/accounts/deposit
 ```
 
 ### 4. Вывод денег с биржи
-### Эндпоинт POST /api/accounts/withdraw
+### Эндпоинт POST ```/api/accounts/withdraw```
 #### Доступно для зарегистрированного пользователя с ролью USER, ADMIN
 Запрос
 ```http request
@@ -105,7 +105,7 @@ POST /api/accounts/withdraw
 ```
 
 ### 5. Просмотр актуальных курсов валют
-### Эндпоинт GET /api/currencies/{currency}/exchangeRates
+### Эндпоинт ```GET /api/currencies/{currency}/exchangeRates```
 #### Доступно для зарегистрированного пользователя с ролью USER, ADMIN
 Запрос
 ```http request
@@ -120,7 +120,7 @@ GET /api/currencies/RUB/exchangeRates
 ```
 
 ### 6.
-### Эндпоинт POST /api/accounts/transfer
+### Эндпоинт ```POST /api/accounts/transfer```
 #### Доступно для зарегистрированного пользователя с ролью USER, ADMIN
 Запрос
 ```http request
@@ -144,7 +144,7 @@ POST /api/accounts/transfer
 ```
 
 ### 7. Изменить курс валют
-### Эндпоинт POST /api/currencies/{currency}/exchangeRates
+### Эндпоинт ```POST /api/currencies/{currency}/exchangeRates```
 #### Доступно для зарегистрированного пользователя с ролью ADMIN
 Запрос
 ```http request
@@ -165,7 +165,7 @@ POST /api/currencies/TON/exchangeRates
 ```
 
 ### 8. Посмотреть общую сумму на всех пользовательских счетах для указанной валюты
-### Эндпоинт GET /api/accounts/totalAmount/{currency}
+### Эндпоинт ```GET /api/accounts/totalAmount/{currency}```
 #### Доступно для зарегистрированного пользователя с ролью ADMIN
 Запрос
 ```http request
@@ -179,7 +179,7 @@ GET /api/accounts/totalAmount/RUB
 ```
 
 ### 9. Посмотреть число транзакций в заданный временной диапазон
-### Эндпоинт GET /api/history/transactionCount
+### Эндпоинт ```GET /api/history/transactionCount```
 #### Доступно для зарегистрированного пользователя с ролью ADMIN
 Запрос
 ```http request
