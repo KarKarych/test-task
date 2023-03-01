@@ -16,6 +16,8 @@
 
 secret_key передаётся в хедере Authorization secret_key
 
+Альтернативные исходы не включают в себя 400 ошибки, связанные с неправильнм именованием ключей и неправильными значениями в json 
+
 тестовые пользователи:
 - secret_key ADMIN  ```bpeBIoOfKAAdir5KUZtF4fmF57mwZmpy4sF```
 - secret_key  USER  ```UZtF4fmF57mwZmpy4sFbpeBIoOfKAAdir5K```
@@ -39,6 +41,9 @@ POST /api/users
 	"secret_key": "YmlT59VjOJXbvrdfL94WmL2K2CX82D5K3mi"
 }
 ```
+Альтернативные исходы: 
+- 400 - username уже есть,
+- 400 - email уже есть
 
 ### 2. Просмотр баланса своего кошелька
 ### Эндпоинт GET ```/api/accounts/balance```
@@ -74,6 +79,8 @@ POST /api/accounts/deposit
   "RUB_wallet": "2000"
 }
 ```
+Альтернативные исходы:
+- 400 - currency_wallet <= 0
 
 ### 4. Вывод денег с биржи
 ### Эндпоинт POST ```/api/accounts/withdraw```
@@ -103,6 +110,11 @@ POST /api/accounts/withdraw
   "RUB_wallet": 4812
 }
 ```
+Альтернативные исходы:
+- 400 - заданы одновременно кошелёк и кредитная карта
+- 400 - кредитная карта не прошла проверку алгоритмом Луна
+- 400 - count <= 0
+- 400 - на счёте недостаточно средств
 
 ### 5. Просмотр актуальных курсов валют
 ### Эндпоинт ```GET /api/currencies/{currency}/exchangeRates```
@@ -142,6 +154,10 @@ POST /api/accounts/transfer
     "amount_to": 10.00
 }
 ```
+Альтернативные исходы:
+- 400 - currency_from совпадает с currency_ещ
+- 400 - amount сумма <= 0
+- 400 - на счёте недостаточно средств
 
 ### 7. Изменить курс валют
 ### Эндпоинт ```POST /api/currencies/{currency}/exchangeRates```
@@ -163,6 +179,9 @@ POST /api/currencies/TON/exchangeRates
   "BTC": 0.3234233
 }
 ```
+Альтернативные исходы:
+- 400 - какой-либо из курсов <= 0
+- 400 - заданы не все курсы, например, в примере выше отсутствует RUB
 
 ### 8. Посмотреть общую сумму на всех пользовательских счетах для указанной валюты
 ### Эндпоинт ```GET /api/accounts/totalAmount/{currency}```
@@ -197,3 +216,19 @@ GET /api/history/transactionCount
     "transaction_count": 9
 }
 ```
+
+### 10. Активировать аккаунт
+### Эндпоинт ```GET /api/tokens/verify/?token={token}```
+#### Доступно для незарегистрированного пользователя
+Запрос
+```http request
+GET /api/tokens/verify/?token=retertewrtewrtewstte
+```
+Ответ
+```json
+{
+    "message" : "Thank you for registering for our service. Your account has been successfully created. Now you can use our API"
+}
+```
+Альтернативные исходы:
+- 404 - токен не найден
